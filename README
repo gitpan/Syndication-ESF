@@ -1,4 +1,4 @@
-ESF - Create and update ESF files
+Syndication::ESF - Create and update ESF files
 
 This module is the basic framework for creating and maintaing Epistula Syndication
 Format (ESF) files. More information on the format can be found at the Aquarionics
@@ -23,13 +23,12 @@ To install this module type the following:
 
 AUTHOR
 
-Copyright 2004, Brian Cassidy (brian@alternation.net).
-
-Questions, bug reports and suggestions can be emailed directly to me
-at brian@alternation.net.
+Brian Cassidy <bricas@cpan.org>
 
 
-LICENSE
+COPYRIGHT AND LICENSE
+
+Copyright 2005 by Brian Cassidy
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.

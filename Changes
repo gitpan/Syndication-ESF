@@ -1,5 +1,8 @@
 Revision history for Perl extension Syndication::ESF.
 
+0.05  Wed Mar 02 2005
+	- added pod and pod_coverage tests
+
 0.04  Sun Sep 19 2004
 	- Pod fixups
 	- file opening now croaks on failure
