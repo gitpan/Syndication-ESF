@@ -1,4 +1,4 @@
-use Test::More tests => 11;
+use Test::More tests => 15;
 
 use Syndication::ESF;
 
@@ -37,4 +37,6 @@ sub test_fields {
 	is( $esf->channel( 'title' ), 'Aquarionics', "channel( 'title' )" );
 	is( $esf->channel( 'contact' ), 'aquarion@aquarionics.com (Aquarion)', "channel( 'contact' )" );
 	is( $esf->channel( 'link' ), 'http://www.aquarionics.com/', "channel( 'link' )" );
+	is( $esf->contact_name, 'Aquarion', "contact_name()" );
+	is( $esf->contact_email, 'aquarion@aquarionics.com', "contact_email()" );
 }

@@ -1,5 +1,8 @@
 Revision history for Perl extension Syndication::ESF.
 
+0.02  Sun Aug 10 2003
+	- Added (get) contact_name, contact_email convenience methods
+
 0.01  Fri May 30 16:20:10 2003
 	- original version; created by h2xs 1.21 with options
 		-AX Syndication::ESF

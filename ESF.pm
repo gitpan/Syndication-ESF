@@ -3,7 +3,7 @@ package Syndication::ESF;
 use strict;
 use Carp;
 
-$Syndication::ESF::VERSION = '0.01';
+$Syndication::ESF::VERSION = '0.02';
 
 # Defines the set of valid fields for a channel and its items
 my @channel_fields = qw( title contact link );
@@ -38,6 +38,23 @@ sub channel {
 	}
 
 	return $self->{ channel };
+}
+
+sub contact_name {
+	my $self = shift;
+
+	my @contact = split( / /, $self->{ channel }->{ contact }, 2 );
+
+	$contact[ 1 ] =~ s/[\(\)]//g;
+	return $contact[ 1 ];
+}
+
+sub contact_email {
+	my $self = shift;
+
+	my @contact = split( / /, $self->{ channel }->{ contact }, 2 );
+
+	return $contact[ 0 ];
 }
 
 sub add_item {
@@ -209,6 +226,14 @@ Parse the supplied raw ESF data.
 =item parsefile($filename)
 
 Same as C<parse()>, but takes a filename as input.
+
+=item contact_name()
+
+shortcut to get the contact name
+
+=item contact_email()
+
+shortcut to get the contact email
 
 =item as_string()
 
