@@ -1,5 +1,11 @@
 Revision history for Perl extension Syndication::ESF.
 
+0.03  Wed Jan 21 2004
+	- Fixed up directory structure of distribution
+	- Internally, channel() is used rather than direct data access
+	- Contact name/email is extract when contact info is set not
+	  when the accessors are used
+
 0.02  Sun Aug 10 2003
 	- Added (get) contact_name, contact_email convenience methods
 
