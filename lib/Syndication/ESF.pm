@@ -45,7 +45,7 @@ use strict;
 use warnings;
 use Carp;
 
-our $VERSION = '0.05';
+our $VERSION = '0.06';
 
 # Defines the set of valid fields for a channel and its items
 my @channel_fields = qw( title contact link );
@@ -167,7 +167,7 @@ sub parse {
 	# boolean to indicate if we're parsing the meta data or the items.
 	my $metamode  = 1;
 
-	foreach my $line ( split /\n/, $data ) {
+	foreach my $line ( split /(?:\015\012|\012|\015)/, $data ) {
 		# skip to the next line if it's a comment
 		next if $line =~ /^#/;
 
@@ -201,14 +201,9 @@ sub parsefile {
 	my $self = shift;
 	my $file = shift;
 
-	my $data;
-
 	open( FILE, $file ) or croak "File open error ($file): $!";
 
-	{
-		local $/;
-		$data = <FILE>;
-	}
+	my $data = do { local $/; <FILE>; };
 
 	close( FILE ) or carp( "File close error ($file): $!" );
 
