@@ -1,5 +1,9 @@
 Revision history for Perl extension Syndication::ESF.
 
+0.04  Sun Sep 19 2004
+	- Pod fixups
+	- file opening now croaks on failure
+
 0.03  Wed Jan 21 2004
 	- Fixed up directory structure of distribution
 	- Internally, channel() is used rather than direct data access
